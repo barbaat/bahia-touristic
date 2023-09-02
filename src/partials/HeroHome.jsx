@@ -22,9 +22,9 @@ function HeroHome() {
 
           {/* Section header */}
           <div className="text-center">
-            <h1 className="text-7xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Volley<span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Mate</span></h1>
+            <h1 className="text-7xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out"><span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">La Bahía</span></h1>
             <div className="max-w-3xl mx-auto">
-              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">¡Encuentra a los mejores compañeros para jugar al voleybol!</p>
+              <p className="h4 text-xl text-gray-500 mb-8">Espectacular apartamento en Moaña con vistas panorámicas al mar</p>
             </div>
           </div>
 
@@ -42,7 +42,7 @@ function HeroHome() {
             {/* Modal */}
             <Modal id="modal" ariaLabel="modal-headline" show={videoModalOpen} handleClose={() => setVideoModalOpen(false)}>
               <div className="relative pb-9/16">
-                <iframe className="absolute w-full h-full" src="https://player.vimeo.com/video/803640776" title="Video" allowFullScreen></iframe>
+                <iframe className="absolute w-full h-full" src="https://player.vimeo.com/video/860475560" title="Video" allowFullScreen></iframe>
               </div>
             </Modal>
 

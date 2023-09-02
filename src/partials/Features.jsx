@@ -1,11 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Transition from '../utils/Transition';
 
-import FeaturesBg from '../images/features-bg.png';
-import FeaturesElement from '../images/features-element.png';
-import voley1 from '../images/voley1.jpeg';
-import voley2 from '../images/voley2.jpg';
-import voley3 from '../images/voley3.jpg';
+import voley1 from '../images/playa.jpeg';
+import voley2 from '../images/pulpo.jpeg';
+import voley3 from '../images/ruta.jpeg';
 
 function Features() {
 
@@ -36,8 +34,8 @@ function Features() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">¿En qué consiste VolleyMate?</h1>
-            <p className="text-xl text-gray-600">VolleyMate es una aplicación creada para las personas que quieran jugar al voleibol, puedan encontrar compañeros para jugar.</p>
+            <h1 className="h1 mb-4">Descubre Moaña</h1>
+            <p className="text-xl text-gray-600">"¡Moaña, donde el mar abraza la tierra y la tradición vive en cada ola!"</p>
           </div>
 
           {/* Section content */}
@@ -46,38 +44,46 @@ function Features() {
             {/* Content */}
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6" data-aos="fade-right">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
-                <h3 className="h3 mb-3">¿Que puedes hacer gracias a VolleyMate?</h3>
+                <h3 className="h3 mb-3">¿Qué encontrarás?</h3>
               </div>
               {/* Tabs buttons */}
               <div className="mb-8 md:mb-0">
                 <a
-                  className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 1 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-200 border-transparent'}`}
+                  className={`flex items-center text-md p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 1 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-200 border-transparent'}`}
                   href="#0"
                   onClick={(e) => { e.preventDefault(); setTab(1); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Únete a partidos</div>
-                    <div className="text-gray-600">Únete a partidos creados por otros miembros de VoleyMate, tendrás una lista de actividades a las que puedes unirte a tu disposición.</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1">Playas increíbles</div>
+                    <div className="text-gray-600">Moaña, situada en la costa de Galicia, cuenta con varias playas encantadoras a
+                      lo largo de su litoral. Algunas de las playas más destacadas en Moaña son la playa de A Xunqueira, playa de A Borna
+                      y la playa de Rodeira (en la cercana ciudad de Cangas). Vistas hacia las famosas bateas, lugar donde se crían y se recogen
+                      los mejillones.</div>
                   </div>
                 </a>
                 <a
-                  className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 2 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-200 border-transparent'}`}
+                  className={`flex items-center text-md p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 2 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-200 border-transparent'}`}
                   href="#0"
                   onClick={(e) => { e.preventDefault(); setTab(2); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Crea partidos</div>
-                    <div className="text-gray-600">Crea partidos de voley para que más gente se una a tí, indicando el número de personas y el lugar del partido.</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1">Gastronomía única</div>
+                    <div className="text-gray-600">La gastronomía de Moaña en Galicia se destaca por su enfoque en productos del mar
+                      frescos, como mariscos, pescados y pulpo, preparados de diversas maneras, desde empanadas hasta a la brasa.
+                      Los platos típicos incluyen la empanada de berberechos, el pulpo a la gallega y el rodaballo a la parrilla.</div>
                   </div>
                 </a>
                 <a
-                  className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 3 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-200 border-transparent'}`}
+                  className={`flex items-center text-md p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 3 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-200 border-transparent'}`}
                   href="#0"
                   onClick={(e) => { e.preventDefault(); setTab(3); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Chatea con tus compañeros</div>
-                    <div className="text-gray-600">Podrás entrablar conversaciones con los participantes de los partidos para poder conoceros mejor antes de veros en persona.</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1">Paisajes y rutas montañosas y costeras</div>
+                    <div className="text-gray-600">Ofrece una combinación única de paisajes montañosos y costeros. 
+                    En el interior, verdes colinas y bosques que son ideales para practicar senderismo y disfrutar de vistas 
+                    panorámicas. Además, las rutas costeras te permiten explorar acantilados escarpados y disfrutar de impresionantes
+                     vistas al océano Atlántico.</div>
                   </div>
                 </a>
               </div>

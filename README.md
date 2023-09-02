@@ -1,19 +1,15 @@
 
-# Project setup
+# Página web oficial apartamento La Bahía
+
+## Configuración del proyecto
 ```
 npm install
 ```
 
-## Compiles and hot-reloads for development
+### Compila y ejecuta el proyecto
 ```
 npm run dev
 ```
 
-## Compiles and minifies for production
-```
-npm run build
-```
 
-## Customize configuration
-See [Configuration Reference](https://vitejs.dev/guide/).
-# bahia-touristic
+
