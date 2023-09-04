@@ -34,9 +34,6 @@ function HeroHome() {
               <div className="flex flex-col justify-center">
                 <img className="mx-auto" src={LogoImage} width="568" height="232" alt="Logo" />
               </div>
-              <button className="absolute top-full flex items-center transform -translate-y-1/2 bg-white rounded-full font-medium group p-4 shadow-lg" onClick={(e) => { e.preventDefault(); e.stopPropagation(); setVideoModalOpen(true); }} aria-controls="modal">
-                <span className="ml-3">Ver vídeo</span>
-              </button>
             </div>
 
             {/* Modal */}

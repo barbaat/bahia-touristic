@@ -1,7 +1,7 @@
 import React from 'react';
 
 import logoB from '../images/logo-B.png';
-import logoA from '../images/logo-A.png';
+import logoA from '../images/logo-a.png';
 
 function Testimonials() {
   return (
