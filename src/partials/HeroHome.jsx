@@ -39,7 +39,7 @@ function HeroHome() {
                 height="800"
                 alt="Vista panorámica de Moaña y la bahía"
                 className="h-[400px] w-full rounded-xl object-cover md:h-[430px]"
-                fetchPriority="high"
+                fetchpriority="high"
                 decoding="async"
               />
             </figure>

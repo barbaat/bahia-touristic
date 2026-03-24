@@ -1,6 +1,7 @@
 import React from 'react';
 import logoB from '../images/logo-B.png';
 import HeroImage from '../images/vista-pajaro.jpeg';
+import AvailabilityCalendar from './AvailabilityCalendar';
 
 function Contact() {
   const bookingUrl = 'https://www.booking.com/Share-sOPjHU';
@@ -41,56 +42,62 @@ function Contact() {
               </dl>
             </div>
 
-            <div className="grid gap-5 lg:col-span-7" data-aos="fade-left" data-aos-delay="100">
-              <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                <div className="relative">
-                  <a href={bookingUrl} target="_blank" rel="noreferrer" className="block">
-                    <img
-                      src={HeroImage}
-                      width="1200"
-                      height="700"
-                      alt="Vista del alojamiento La Bahia en Moana"
-                      className="h-48 w-full object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </a>
-                  <a
-                    href={bookingReviewsUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-lg bg-white/95 px-3 py-2 shadow-md transition hover:bg-white"
-                    aria-label="Ver valoraciones en Booking"
-                  >
-                    <span className="text-sm font-bold text-slate-900">Fabuloso</span>
-                    <span className="rounded bg-blue-700 px-2 py-1 text-sm font-bold text-white">8,9</span>
-                    <span className="text-xs text-slate-600">29 comentarios</span>
-                  </a>
-                </div>
-
-                <div className="p-6">
-                  <img src={logoB} width="170" height="70" alt="Booking" className="h-11 w-auto object-contain" loading="lazy" decoding="async" />
-                  <h3 className="mt-3 text-lg font-bold text-slate-900">La Bahia - Moana</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-slate-600 sm:text-sm">
-                    Apartamento con vistas panoramicas al mar, ubicacion excelente y reserva segura en Booking.
-                  </p>
-
-                  <a
-                    href={bookingReviewsUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-3 inline-flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs font-semibold text-amber-900 transition hover:bg-amber-100 sm:text-sm"
-                  >
-                    <span aria-hidden="true">★</span>
-                    <span>Leer valoraciones en Booking</span>
-                  </a>
-
-                  <a href={bookingUrl} target="_blank" rel="noreferrer" className="btn-primary mt-4 w-full text-sm">
-                    Reservar en Booking
-                  </a>
-                </div>
-              </article>
+            <div className="lg:col-span-7" data-aos="fade-left" data-aos-delay="100">
+              <AvailabilityCalendar />
             </div>
+
+            <article
+              className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg lg:col-span-8 lg:col-start-5"
+              data-aos="fade-left"
+              data-aos-delay="120"
+            >
+              <div className="relative">
+                <a href={bookingUrl} target="_blank" rel="noreferrer" className="block">
+                  <img
+                    src={HeroImage}
+                    width="1200"
+                    height="700"
+                    alt="Vista del alojamiento La Bahia en Moana"
+                    className="h-48 w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+                <a
+                  href={bookingReviewsUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-lg bg-white/95 px-3 py-2 shadow-md transition hover:bg-white"
+                  aria-label="Ver valoraciones en Booking"
+                >
+                  <span className="text-sm font-bold text-slate-900">Fabuloso</span>
+                  <span className="rounded bg-blue-700 px-2 py-1 text-sm font-bold text-white">8,9</span>
+                  <span className="text-xs text-slate-600">29 comentarios</span>
+                </a>
+              </div>
+
+              <div className="p-6">
+                <img src={logoB} width="170" height="70" alt="Booking" className="h-11 w-auto object-contain" loading="lazy" decoding="async" />
+                <h3 className="mt-3 text-lg font-bold text-slate-900">La Bahia - Moana</h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600 sm:text-sm">
+                  Apartamento con vistas panoramicas al mar, ubicacion excelente y reserva segura en Booking.
+                </p>
+
+                <a
+                  href={bookingReviewsUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-3 inline-flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs font-semibold text-amber-900 transition hover:bg-amber-100 sm:text-sm"
+                >
+                  <span aria-hidden="true">★</span>
+                  <span>Leer valoraciones en Booking</span>
+                </a>
+
+                <a href={bookingUrl} target="_blank" rel="noreferrer" className="btn-primary mt-4 w-full text-sm">
+                  Reservar en Booking
+                </a>
+              </div>
+            </article>
           </div>
         </div>
       </div>
