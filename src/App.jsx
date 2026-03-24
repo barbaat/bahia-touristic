@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Routes,Route, useLocation } from 'react-router-dom';
+﻿import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 import 'aos/dist/aos.css';
 import './css/style.css';
@@ -9,30 +9,27 @@ import AOS from 'aos';
 import Home from './pages/Home';
 
 function App() {
-
   const location = useLocation();
 
   useEffect(() => {
     AOS.init({
       once: true,
       disable: 'phone',
-      duration: 700,
+      duration: 650,
       easing: 'ease-out-cubic',
     });
-  });
+  }, []);
 
   useEffect(() => {
-    document.querySelector('html').style.scrollBehavior = 'auto'
-    window.scroll({ top: 0 })
-    document.querySelector('html').style.scrollBehavior = ''
+    document.documentElement.style.scrollBehavior = 'auto';
+    window.scroll({ top: 0 });
+    document.documentElement.style.scrollBehavior = '';
   }, [location.pathname]);
 
   return (
-    <>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
 }
 

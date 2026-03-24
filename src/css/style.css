@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=fallback');
+﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap');
 
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
@@ -11,14 +11,90 @@
 
 @import 'tailwindcss/utilities';
 
-/* Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive */
-@layer utilities {
-    .rtl {
-        direction: rtl;
-    }
+:root {
+  --surface: #ffffff;
+  --surface-soft: #f2f8f8;
+  --surface-strong: #d6eceb;
+  --text: #0f172a;
+  --text-muted: #475569;
+  --brand: #0f766e;
+  --brand-strong: #115e59;
+  --accent: #d97706;
+  --focus: #14b8a6;
+  --radius-xl: 1rem;
 }
 
-/* See Alpine.js: https://github.com/alpinejs/alpine#x-cloak */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    color: var(--text);
+    background-color: #eaf6f5;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 0.375rem;
+  }
+}
+
+@layer components {
+  .bg-site-gradient {
+    background:
+      radial-gradient(1200px 500px at 85% -50%, rgba(15, 118, 110, 0.22), transparent 60%),
+      radial-gradient(900px 450px at 0% 0%, rgba(217, 119, 6, 0.12), transparent 65%),
+      linear-gradient(180deg, #edf8f7 0%, #f8fbfb 45%, #ffffff 100%);
+  }
+
+  .container-shell {
+    @apply max-w-6xl mx-auto px-5 sm:px-8;
+  }
+
+  .surface-card {
+    background: rgba(255, 255, 255, 0.86);
+    @apply border border-white/80 shadow-lg rounded-2xl backdrop-blur;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-teal-700 px-6 py-3 text-base font-semibold text-white transition duration-300 ease-out;
+    box-shadow: 0 10px 24px rgba(15, 118, 110, 0.28);
+  }
+
+  .btn-primary:hover {
+    @apply bg-teal-800 -translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-teal-700/30 bg-white px-6 py-3 text-base font-semibold text-teal-900 transition duration-300 ease-out;
+  }
+
+  .btn-secondary:hover {
+    @apply border-teal-700/60 bg-teal-50 -translate-y-0.5;
+  }
+
+  .kicker {
+    @apply inline-flex items-center rounded-full border border-teal-700/20 bg-teal-100/70 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-teal-900;
+  }
+}
+
+@layer utilities {
+  .rtl {
+    direction: rtl;
+  }
+}
+
 [x-cloak=""] {
-    display: none;
+  display: none;
 }

@@ -1,112 +1,70 @@
-import React, { useEffect } from 'react';
 import logoB from '../images/logo-B.png';
-import logoA from '../images/logo-a.png';
+import HeroImage from '../images/vista-pajaro.jpeg';
 
 function Contact() {
-  useEffect(() => {
-    const airbnbScript = document.createElement('script');
-    airbnbScript.src = 'https://www.airbnb.es/embeddable/airbnb_jssdk';
-    airbnbScript.async = true;
-    document.body.appendChild(airbnbScript);
-  }, []);
-
   return (
-    <section className="relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="py-12 md:py-20 text-center">
-          <h2 className="h2 mb-4">
-            Para contactarnos te dejamos los enlaces del apartamento, o si lo prefiere, nuestro número de teléfono para obtener más información:
-          </h2>
-          <br />
-          <h5 className="h3 mb-4">
-            Teléfono: <a href="tel:+34654154413">+34 654154413</a>
-          </h5>
-          <h5 className="h3 mb-8">
-            Correo: <a href="mailto:anisocosta@gmail.com">anisocosta@gmail.com</a>
-          </h5>
-          <h6 className="h4 mb-8">Puedes reservar directamente en los siguientes enlaces:</h6>
+    <section id="reservas" className="py-16 md:py-24" aria-labelledby="reservas-titulo">
+      <div className="container-shell">
+        <div className="surface-card overflow-hidden p-8 md:p-12">
+          <div className="grid items-start gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-5" data-aos="fade-right">
+              <span className="kicker">Reserva sin complicaciones</span>
+              <h2 id="reservas-titulo" className="mt-4 text-4xl font-bold text-slate-900 md:text-5xl">
+                Elige tu canal preferido y confirma en minutos
+              </h2>
+              <p className="mt-4 text-lg text-slate-600">
+                Te atendemos de forma directa para que tengas claridad de precio, disponibilidad y condiciones desde el primer contacto.
+              </p>
 
-          {/* Contenedor flex */}
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-            {/* Booking */}
-            <div className="flex flex-col items-center w-full md:w-auto">
-              <a
-                href="https://www.booking.com/Share-sOPjHU"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src={logoB}
-                  width="200"
-                  height="200"
-                  alt="Booking logo"
-                  className="mb-4"
-                />
-              </a>
-              {/* Embed copia de Airbnb */}
-              <div
-                className="airbnb-embed"
-                data-id="51267053"
-                data-view="home"
-                data-hide-price="true"
-                style={{ width: '450px', height: '300px', margin: 'auto' }}
-              >
-                <a href="https://www.booking.com/Share-sOPjHU">
-                  
-                </a>
-                <a
-                  href="https://www.booking.com/Share-sOPjHU"
-                  rel="nofollow"
-                >
-                  
-                </a>
-              </div>
+              <dl className="mt-6 space-y-4 text-slate-700">
+                <div>
+                  <dt className="text-sm font-semibold uppercase tracking-wide text-slate-500">Telefono</dt>
+                  <dd className="mt-1 text-lg font-semibold">
+                    <a href="tel:+34654154413" className="transition hover:text-teal-700">
+                      +34 654 154 413
+                    </a>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-sm font-semibold uppercase tracking-wide text-slate-500">Correo</dt>
+                  <dd className="mt-1 text-lg font-semibold">
+                    <a href="mailto:anisocosta@gmail.com" className="transition hover:text-teal-700">
+                      anisocosta@gmail.com
+                    </a>
+                  </dd>
+                </div>
+              </dl>
             </div>
 
-            {/* Airbnb */}
-            <div className="flex flex-col items-center w-full md:w-auto">
-              <a
-                href="https://abnb.me/6sE7Sqh4GCb"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src={logoA}
-                  width="150"
-                  height="180"
-                  alt="Airbnb logo"
-                  className="mb-4"
-                />
-              </a>
-              <div
-                className="airbnb-embed-frame"
-                data-id="51267053"
-                data-view="home"
-                data-hide-price="true"
-                style={{ width: '450px', height: '300px', margin: 'auto' }}
-              >
-                <a href="https://www.airbnb.es/rooms/51267053?check_in=2025-08-30&check_out=2025-09-04&guests=1&adults=2&s=66&source=embed_widget">
-                  Ver en Airbnb
-                </a>
-                <a
-                  href="https://www.airbnb.es/rooms/51267053?check_in=2025-08-30&check_out=2025-09-04&guests=1&adults=2&s=66&source=embed_widget"
-                  rel="nofollow"
-                >
-                  Loft · Moaña · ★4,78 · 1 dormitorio · 2 camas · 1 baño
-                </a>
-              </div>
-            </div>
-          </div>
+            <div className="grid gap-5 lg:col-span-7" data-aos="fade-left" data-aos-delay="100">
+              <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                <a href="https://www.booking.com/Share-sOPjHU" target="_blank" rel="noreferrer" className="block">
+                  <img
+                    src={HeroImage}
+                    width="1200"
+                    height="700"
+                    alt="Vista del alojamiento La Bahia en Moana"
+                    className="h-56 w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
 
-          {/* Mensaje final */}
-          <div className="mt-12 max-w-6xl mx-auto">
-            <div
-              className="h3 relative rounded py-5 px-8 md:py-8 md:px-12 shadow-2xl overflow-hidden text-center"
-              data-aos="zoom-y-out"
-            >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
-                ¡¡Disfruta de las mejores vacaciones en familia!!
-              </span>
+                  <div className="p-6">
+                    <img src={logoB} width="170" height="70" alt="Booking" className="h-11 w-auto object-contain" loading="lazy" decoding="async" />
+                    <h3 className="mt-4 text-xl font-bold text-slate-900">La Bahia - Moana</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                      Apartamento con vistas panoramicas al mar, ubicacion excelente y reserva segura en Booking.
+                    </p>
+                    <div className="mt-4 inline-flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-900">
+                      <span aria-hidden="true">★</span>
+                      <span>Ver valoraciones de huespedes en Booking</span>
+                    </div>
+                    <div className="mt-4 inline-flex rounded-full bg-teal-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-teal-800">
+                      Ver preview completa en Booking
+                    </div>
+                  </div>
+                </a>
+              </article>
             </div>
           </div>
         </div>

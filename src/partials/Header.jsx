@@ -1,39 +1,53 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import Logo from '../images/logo.png';
+
 function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const [top, setTop] = useState(true);
-
-  // detect whether user has scrolled the page down by 10px 
   useEffect(() => {
-    const scrollHandler = () => {
-      window.pageYOffset > 10 ? setTop(false) : setTop(true)
-    };
-    window.addEventListener('scroll', scrollHandler);
-    return () => window.removeEventListener('scroll', scrollHandler);
-  }, [top]);  
+    const onScroll = () => setIsScrolled(window.pageYOffset > 16);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${!top && 'bg-white backdrop-blur-sm shadow-lg'}`}>
-      <div className="max-w-6xl mx-auto px-5 sm:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/85 shadow-lg backdrop-blur-md' : 'bg-transparent'
+      }`}
+    >
+      <div className="container-shell">
+        <div className="flex h-20 items-center justify-between">
+          <Link to="/" className="flex items-center gap-3" aria-label="La Bahia inicio">
+            <img src={Logo} width="44" height="44" alt="Logotipo de La Bahia" className="rounded-xl" />
+            <span className="font-display text-2xl text-slate-900">La Bahia</span>
+          </Link>
 
-          {/* Site branding */}
-          <div className="flex-shrink-0 mr-4">
-            {/* Logo */}
-            <Link to="/" className="block" aria-label="Cruip">
-              
-            </Link>
-          </div>
-
-          {/* Site navigation */}
-          <nav className="flex flex-grow">
-            <ul className="flex flex-grow justify-end flex-wrap items-center">
+          <nav aria-label="Navegacion principal" className="hidden md:block">
+            <ul className="flex items-center gap-7 text-sm font-semibold text-slate-700">
+              <li>
+                <a href="#experiencias" className="transition hover:text-teal-700">
+                  Experiencias
+                </a>
+              </li>
+              <li>
+                <a href="#video" className="transition hover:text-teal-700">
+                  Tour virtual
+                </a>
+              </li>
+              <li>
+                <a href="#reservas" className="transition hover:text-teal-700">
+                  Reservas
+                </a>
+              </li>
             </ul>
-
           </nav>
 
+          <a href="#reservas" className="btn-primary px-5 py-2.5 text-sm md:text-base">
+            Reservar ahora
+          </a>
         </div>
       </div>
     </header>

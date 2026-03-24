@@ -1,5 +1,6 @@
-import React from 'react';
+﻿import React from 'react';
 
+import Header from '../partials/Header';
 import HeroHome from '../partials/HeroHome';
 import FeaturesHome from '../partials/Features';
 import FeaturesBlocks from '../partials/FeaturesBlocks';
@@ -8,8 +9,10 @@ import Footer from '../partials/Footer';
 
 function Home() {
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
-      <main className="flex-grow">
+    <div className="flex min-h-screen flex-col overflow-hidden">
+      <Header />
+
+      <main className="flex-grow" id="inicio">
         <HeroHome />
         <FeaturesHome />
         <FeaturesBlocks />
@@ -17,7 +20,6 @@ function Home() {
       </main>
 
       <Footer />
-
     </div>
   );
 }

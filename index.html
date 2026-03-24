@@ -1,20 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/images/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>La Bahía - Moaña</title>
+    <title>La Bahía · Apartamento Turístico en Moaña</title>
+    <meta name="description" content="Apartamento turístico en Moaña con vistas al mar, ubicación privilegiada y acceso rápido a playas, gastronomía y rutas costeras." />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0f766e" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="La Bahía · Apartamento Turístico en Moaña" />
+    <meta property="og:description" content="Reserva tu estancia en La Bahía y disfruta Moaña entre mar, naturaleza y gastronomía gallega." />
+    <meta property="og:image" content="/src/images/logo.png" />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="La Bahía · Apartamento Turístico en Moaña" />
+    <meta name="twitter:description" content="Apartamento turístico en Moaña con vistas panorámicas y reserva directa." />
+    <meta name="twitter:image" content="/src/images/logo.png" />
+    <link rel="icon" type="image/png" href="/src/images/logo.png" />
   </head>
-  <body style="background-color : #c8eaed;" class="font-inter antialiased bg-white text-gray-900 tracking-tight">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script>
-        if (localStorage.getItem('sidebar-expanded') == 'true') {
-            document.querySelector('body').classList.add('sidebar-expanded');
-        } else {
-            document.querySelector('body').classList.remove('sidebar-expanded');
-        }
-    </script>   
+  <body class="font-body antialiased tracking-tight text-slate-900 bg-site-gradient">
+    <noscript>Necesitas habilitar JavaScript para ver esta web.</noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
