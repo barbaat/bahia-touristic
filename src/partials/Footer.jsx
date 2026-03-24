@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <footer className="border-t border-slate-200/80 bg-white/70 py-10">
+    <footer className="border-t border-slate-200/80 bg-white/70 py-8">
       <div className="container-shell">
         <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
           <div>
-            <Link to="/" className="font-display text-2xl text-slate-900">
+            <Link to="/" className="font-display text-xl text-slate-900">
               La Bahía
             </Link>
             <p className="mt-1 text-sm text-slate-600">Apartamento turístico en Moaña, Galicia</p>

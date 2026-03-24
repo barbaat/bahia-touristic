@@ -19,10 +19,10 @@ function Header() {
       }`}
     >
       <div className="container-shell">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center gap-3" aria-label="La Bahia inicio">
             <img src={Logo} width="44" height="44" alt="Logotipo de La Bahia" className="rounded-xl" />
-            <span className="font-display text-2xl text-slate-900">La Bahia</span>
+            <span className="font-display text-xl text-slate-900 md:text-2xl">La Bahia</span>
           </Link>
 
           <nav aria-label="Navegacion principal" className="hidden md:block">
@@ -45,7 +45,7 @@ function Header() {
             </ul>
           </nav>
 
-          <a href="#reservas" className="btn-primary px-5 py-2.5 text-sm md:text-base">
+          <a href="#reservas" className="btn-primary px-4 py-2 text-sm">
             Reservar ahora
           </a>
         </div>

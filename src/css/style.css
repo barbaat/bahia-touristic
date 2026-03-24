@@ -33,6 +33,7 @@
     font-family: 'Manrope', sans-serif;
     color: var(--text);
     background-color: #eaf6f5;
+    font-size: 0.95rem;
   }
 
   h1,
@@ -59,7 +60,7 @@
   }
 
   .container-shell {
-    @apply max-w-6xl mx-auto px-5 sm:px-8;
+    @apply max-w-6xl mx-auto px-4 sm:px-6;
   }
 
   .surface-card {

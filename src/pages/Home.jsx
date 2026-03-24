@@ -4,6 +4,8 @@ import Header from '../partials/Header';
 import HeroHome from '../partials/HeroHome';
 import FeaturesHome from '../partials/Features';
 import FeaturesBlocks from '../partials/FeaturesBlocks';
+import GuestReviews from '../partials/GuestReviews';
+import Faq from '../partials/Faq';
 import Contact from '../partials/Contact';
 import Footer from '../partials/Footer';
 
@@ -16,6 +18,8 @@ function Home() {
         <HeroHome />
         <FeaturesHome />
         <FeaturesBlocks />
+        <GuestReviews />
+        <Faq />
         <Contact />
       </main>
 

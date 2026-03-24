@@ -27,25 +27,25 @@ function FeaturesBlocks() {
   ];
 
   return (
-    <section className="py-16 md:py-24" aria-labelledby="seccion-prueba-social" id="video">
+    <section className="py-12 md:py-16" aria-labelledby="seccion-prueba-social" id="video">
       <div className="container-shell">
         <div className="grid gap-6 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <h2 id="seccion-prueba-social" className="text-4xl font-bold text-slate-900 md:text-5xl" data-aos="fade-up">
+            <h2 id="seccion-prueba-social" className="text-3xl font-bold text-slate-900 md:text-4xl" data-aos="fade-up">
               Experiencia real, no promesas vacías
             </h2>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-3">
               <article className="surface-card p-5 text-center" data-aos="zoom-in" data-aos-delay="80">
-                <p className="text-3xl font-bold text-teal-800">4.7/5</p>
+                <p className="text-2xl font-bold text-teal-800">4.7/5</p>
                 <p className="mt-1 text-sm text-slate-600">Valoración destacada</p>
               </article>
               <article className="surface-card p-5 text-center" data-aos="zoom-in" data-aos-delay="140">
-                <p className="text-3xl font-bold text-teal-800">2 min</p>
+                <p className="text-2xl font-bold text-teal-800">2 min</p>
                 <p className="mt-1 text-sm text-slate-600">Respuesta habitual</p>
               </article>
               <article className="surface-card p-5 text-center" data-aos="zoom-in" data-aos-delay="200">
-                <p className="text-3xl font-bold text-teal-800">100%</p>
+                <p className="text-2xl font-bold text-teal-800">100%</p>
                 <p className="mt-1 text-sm text-slate-600">Atención personalizada</p>
               </article>
             </div>
@@ -73,10 +73,10 @@ function FeaturesBlocks() {
                   alt={item.alt}
                   loading="lazy"
                   decoding="async"
-                  className="h-56 w-full rounded-xl object-cover"
+                  className="h-48 w-full rounded-xl object-cover"
                 />
                 <figcaption className="px-1 pb-1 pt-4">
-                  <p className="text-lg font-bold text-slate-900">{item.title}</p>
+                  <p className="text-base font-bold text-slate-900">{item.title}</p>
                   <p className="text-sm text-slate-600">{item.caption}</p>
                 </figcaption>
               </figure>
