@@ -1,51 +1,59 @@
-﻿
-import HeroImage from '../images/vista-pajaro.jpeg';
+import HeroImage from '../images/playa.jpeg';
+import { useParallax } from '../hooks/useParallax';
+import { siteConfig } from '../config/site';
 
 function HeroHome() {
+  const parallaxRef = useParallax({ speed: 0.12 });
+
   return (
-    <section className="relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16">
-      <div className="container-shell">
-        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-6" data-aos="fade-right">
-            <h1 className="mt-4 text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
-              Despierta con el mar delante y todo listo para desconectar
-            </h1>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-700 md:text-lg">
-              Apartamento acogedor, vistas panorámicas y acceso rápido a playas, rutas y gastronomía local.
-              Reserva de forma directa, clara y segura.
-            </p>
+    <section className="relative isolate flex h-[92vh] min-h-[560px] items-end overflow-hidden md:h-screen" id="inicio">
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <img
+          ref={parallaxRef}
+          src={HeroImage}
+          width="800"
+          height="534"
+          alt="Atardecer en la playa cerca de Moaña, con el sol reflejado en el mar"
+          className="parallax-layer absolute -top-[8%] left-0 h-[116%] w-full object-cover"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-teal-900/85 via-teal-900/35 to-teal-900/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-900/40 via-transparent to-transparent" />
+      </div>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a href="#reservas" className="btn-primary">
-                Ver disponibilidad
-              </a>
-              <a href="#experiencias" className="btn-secondary">
-                Explorar experiencias
-              </a>
-            </div>
+      <div className="container-shell relative z-10 w-full pb-16 pt-32 md:pb-24">
+        <div className="max-w-2xl">
+          <span className="kicker-light">Moaña · Rías Baixas</span>
+          <h1 className="mt-5 text-4xl font-bold leading-tight text-white drop-shadow-sm md:text-6xl">
+            Despierta con el mar delante
+          </h1>
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-white/90 md:text-lg">
+            Apartamento con vistas panorámicas a la ría, a minutos de la playa y del paseo costero. Reserva de forma
+            directa, clara y segura.
+          </p>
 
-            <ul className="mt-6 grid max-w-xl grid-cols-1 gap-2 text-xs font-medium text-slate-700 sm:grid-cols-3 sm:text-sm">
-              <li className="surface-card px-4 py-3">Check-in ágil</li>
-              <li className="surface-card px-4 py-3">Ubicación estratégica</li>
-              <li className="surface-card px-4 py-3">Atención directa</li>
-            </ul>
-          </div>
-
-          <div className="lg:col-span-6" data-aos="fade-left" data-aos-delay="120">
-            <figure className="surface-card overflow-hidden p-3">
-              <img
-                src={HeroImage}
-                width="1200"
-                height="800"
-                alt="Vista panorámica de Moaña y la bahía"
-                className="h-[400px] w-full rounded-xl object-cover md:h-[430px]"
-                fetchpriority="high"
-                decoding="async"
-              />
-            </figure>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <a href={siteConfig.bookingUrl} target="_blank" rel="noreferrer" className="btn-accent">
+              Reservar en Booking
+            </a>
+            <a href={siteConfig.phoneHref} className="btn-ghost-light">
+              Llamar para reservar
+            </a>
           </div>
         </div>
       </div>
+
+      <a
+        href="#alojamiento"
+        aria-label="Continuar viendo la página"
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs font-semibold uppercase tracking-widest text-white/80 md:flex"
+      >
+        Descubre más
+        <svg className="h-5 w-5 motion-safe:animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </a>
     </section>
   );
 }

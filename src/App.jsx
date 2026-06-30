@@ -1,24 +1,17 @@
-﻿import React, { useEffect } from 'react';
+﻿import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
-import 'aos/dist/aos.css';
 import './css/style.css';
 
-import AOS from 'aos';
-
 import Home from './pages/Home';
+import AvisoLegal from './pages/AvisoLegal';
+import Privacidad from './pages/Privacidad';
+import Cookies from './pages/Cookies';
+import NotFound from './pages/NotFound';
+import SiteNotice from './partials/SiteNotice';
 
 function App() {
   const location = useLocation();
-
-  useEffect(() => {
-    AOS.init({
-      once: true,
-      disable: 'phone',
-      duration: 650,
-      easing: 'ease-out-cubic',
-    });
-  }, []);
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = 'auto';
@@ -27,9 +20,16 @@ function App() {
   }, [location.pathname]);
 
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/aviso-legal" element={<AvisoLegal />} />
+        <Route path="/privacidad" element={<Privacidad />} />
+        <Route path="/cookies" element={<Cookies />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <SiteNotice />
+    </>
   );
 }
 

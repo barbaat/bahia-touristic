@@ -1,8 +1,7 @@
-import React from 'react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
+import { siteConfig } from '../config/site';
 
 function GuestReviews() {
-  const bookingReviewsUrl = 'https://www.booking.com/reviews/es/hotel/la-bahia-moana2.es.html';
-
   const topReviews = [
     {
       author: 'Alessia',
@@ -28,20 +27,35 @@ function GuestReviews() {
     },
   ];
 
-  return (
-    <section className="py-12 md:py-16" aria-labelledby="guest-reviews-title">
-      <div className="container-shell">
-        <h2 id="guest-reviews-title" className="text-3xl font-bold text-slate-900 md:text-4xl" data-aos="fade-up">
-          Valoraciones de nuestros huéspedes
-        </h2>
+  const headingReveal = useScrollReveal({ threshold: 0.25 });
 
-        <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {topReviews.map((review, index) => (
-            <article key={review.author} className="surface-card overflow-hidden p-3" data-aos="fade-up" data-aos-delay={70 + index * 70}>
+  return (
+    <section id="opiniones" className="relative py-16 md:py-24" aria-labelledby="guest-reviews-title">
+      <div className="container-shell">
+        <div className="reveal flex flex-wrap items-end justify-between gap-4" ref={headingReveal}>
+          <div>
+            <span className="kicker">Confianza real</span>
+            <h2 id="guest-reviews-title" className="mt-3 text-3xl font-bold text-slate-900 md:text-4xl">
+              Lo que cuentan nuestros huéspedes
+            </h2>
+          </div>
+          <a
+            href={siteConfig.bookingReviewsUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg bg-blue-700 px-3 py-2 text-sm font-bold text-white transition hover:bg-blue-800"
+          >
+            {siteConfig.bookingRatingLabel} {siteConfig.bookingRating} · {siteConfig.bookingReviewCount} opiniones en Booking
+          </a>
+        </div>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {topReviews.map((review) => (
+            <article key={review.author} className="surface-card overflow-hidden p-3 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
               {review.photo ? (
                 <img
                   src={review.photo}
-                  alt={`Foto de resena de ${review.author} en Booking`}
+                  alt={`Foto de reseña de ${review.author} en Booking`}
                   loading="lazy"
                   decoding="async"
                   className="h-28 w-full rounded-lg object-cover"
@@ -51,11 +65,11 @@ function GuestReviews() {
                 <div className="flex items-center justify-between gap-2">
                   <p className="text-sm font-bold text-slate-900">{review.author}</p>
                   <a
-                    href={bookingReviewsUrl}
+                    href={siteConfig.bookingReviewsUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-1 rounded-md bg-blue-700 px-2 py-1 text-xs font-bold text-white transition hover:bg-blue-800"
-                    aria-label={`Ver valoracion de ${review.author} en Booking`}
+                    aria-label={`Ver valoración de ${review.author} en Booking`}
                   >
                     {review.label} {review.score}
                   </a>

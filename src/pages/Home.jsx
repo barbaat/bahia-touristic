@@ -1,29 +1,35 @@
-﻿import React from 'react';
-
 import Header from '../partials/Header';
 import HeroHome from '../partials/HeroHome';
-import FeaturesHome from '../partials/Features';
-import FeaturesBlocks from '../partials/FeaturesBlocks';
+import Apartment from '../partials/Apartment';
+import Gallery from '../partials/Gallery';
+import Features from '../partials/Features';
+import Location from '../partials/Location';
 import GuestReviews from '../partials/GuestReviews';
 import Faq from '../partials/Faq';
 import Contact from '../partials/Contact';
+import FinalCta from '../partials/FinalCta';
 import Footer from '../partials/Footer';
+import MobileActionBar from '../partials/MobileActionBar';
 
 function Home() {
   return (
-    <div className="flex min-h-screen flex-col overflow-hidden">
+    <div className="flex min-h-screen flex-col overflow-hidden bg-site-gradient">
       <Header />
 
-      <main className="flex-grow" id="inicio">
+      <main className="flex-grow">
         <HeroHome />
-        <FeaturesHome />
-        <FeaturesBlocks />
+        <Apartment />
+        <Gallery />
+        <Features />
+        <Location />
         <GuestReviews />
         <Faq />
         <Contact />
+        <FinalCta />
       </main>
 
       <Footer />
+      <MobileActionBar />
     </div>
   );
 }

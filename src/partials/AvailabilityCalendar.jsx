@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { DEFAULT_APARTMENT_ID, fetchApartmentAvailability } from '../services/availabilityService';
+import { siteConfig } from '../config/site';
 
 const WEEKDAY_LABELS = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
 const MONTH_FORMATTER = new Intl.DateTimeFormat('es-ES', {
@@ -182,7 +183,13 @@ function AvailabilityCalendar({ apartmentId = DEFAULT_APARTMENT_ID }) {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h3 className="mt-1 text-xl font-bold text-slate-900">Calendario de reserva</h3>
-          <p>Llama a +34 654 154 413 para reservar</p>
+          <p>
+            Llama a{' '}
+            <a href={siteConfig.phoneHref} className="font-semibold text-teal-700 hover:text-teal-800">
+              {siteConfig.phoneDisplay}
+            </a>{' '}
+            para reservar
+          </p>
         </div>
       </div>
 

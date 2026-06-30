@@ -13,14 +13,14 @@
 
 :root {
   --surface: #ffffff;
-  --surface-soft: #f2f8f8;
-  --surface-strong: #d6eceb;
-  --text: #0f172a;
-  --text-muted: #475569;
-  --brand: #0f766e;
-  --brand-strong: #115e59;
-  --accent: #d97706;
-  --focus: #14b8a6;
+  --surface-soft: #f5efe1;
+  --surface-strong: #ece0c7;
+  --text: #122027;
+  --text-muted: #4d5e66;
+  --brand: #1f4a5a;
+  --brand-strong: #163847;
+  --accent: #c96a35;
+  --focus: #5e97a8;
   --radius-xl: 1rem;
 }
 
@@ -32,7 +32,7 @@
   body {
     font-family: 'Manrope', sans-serif;
     color: var(--text);
-    background-color: #eaf6f5;
+    background-color: #f7f4ec;
     font-size: 0.95rem;
   }
 
@@ -54,9 +54,9 @@
 @layer components {
   .bg-site-gradient {
     background:
-      radial-gradient(1200px 500px at 85% -50%, rgba(15, 118, 110, 0.22), transparent 60%),
-      radial-gradient(900px 450px at 0% 0%, rgba(217, 119, 6, 0.12), transparent 65%),
-      linear-gradient(180deg, #edf8f7 0%, #f8fbfb 45%, #ffffff 100%);
+      radial-gradient(1200px 500px at 85% -50%, rgba(31, 74, 90, 0.2), transparent 60%),
+      radial-gradient(900px 450px at 0% 0%, rgba(201, 106, 53, 0.1), transparent 65%),
+      linear-gradient(180deg, #f3efe2 0%, #f8f6f1 45%, #ffffff 100%);
   }
 
   .container-shell {
@@ -64,17 +64,26 @@
   }
 
   .surface-card {
-    background: rgba(255, 255, 255, 0.86);
+    background: rgba(255, 255, 255, 0.88);
     @apply border border-white/80 shadow-lg rounded-2xl backdrop-blur;
   }
 
   .btn-primary {
     @apply inline-flex items-center justify-center rounded-xl bg-teal-700 px-6 py-3 text-base font-semibold text-white transition duration-300 ease-out;
-    box-shadow: 0 10px 24px rgba(15, 118, 110, 0.28);
+    box-shadow: 0 10px 24px rgba(31, 74, 90, 0.3);
   }
 
   .btn-primary:hover {
     @apply bg-teal-800 -translate-y-0.5;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center rounded-xl bg-sunset-500 px-6 py-3 text-base font-semibold text-white transition duration-300 ease-out;
+    box-shadow: 0 10px 24px rgba(201, 106, 53, 0.32);
+  }
+
+  .btn-accent:hover {
+    @apply bg-sunset-600 -translate-y-0.5;
   }
 
   .btn-secondary {
@@ -85,14 +94,63 @@
     @apply border-teal-700/60 bg-teal-50 -translate-y-0.5;
   }
 
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center rounded-xl border border-white/50 bg-white/10 px-6 py-3 text-base font-semibold text-white backdrop-blur transition duration-300 ease-out;
+  }
+
+  .btn-ghost-light:hover {
+    @apply border-white/80 bg-white/20 -translate-y-0.5;
+  }
+
   .kicker {
     @apply inline-flex items-center rounded-full border border-teal-700/20 bg-teal-100/70 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-teal-900;
+  }
+
+  .kicker-light {
+    @apply inline-flex items-center rounded-full border border-white/30 bg-white/10 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-white backdrop-blur;
   }
 }
 
 @layer utilities {
   .rtl {
     direction: rtl;
+  }
+
+  /* Lightweight scroll-reveal, paired with src/hooks/useScrollReveal.js */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 {
+    transition-delay: 90ms;
+  }
+
+  .reveal-delay-2 {
+    transition-delay: 180ms;
+  }
+
+  .reveal-delay-3 {
+    transition-delay: 270ms;
+  }
+
+  /* Paired with src/hooks/useParallax.js */
+  .parallax-layer {
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
   }
 }
 
