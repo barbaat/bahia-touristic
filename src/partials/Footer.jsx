@@ -83,17 +83,17 @@ function Footer() {
       </div>
       <div className="border-t border-slate-200 bg-white py-8 pb-24 lg:pb-8">
         <div className="container-shell flex flex-col items-center gap-4">
-          <div className="flex flex-wrap items-center justify-center gap-4 rounded-full border border-slate-200 px-8 py-4 text-sm font-medium text-slate-700">
+          <a
+            href="https://www.nimple.es"
+            target="_blank"
+            rel="noreferrer"
+            className="flex flex-wrap items-center justify-center gap-4 rounded-full border border-slate-200 px-8 py-4 text-sm font-medium text-slate-700 transition-all duration-200 hover:border-slate-300 hover:shadow-md cursor-pointer"
+          >
             Portal gestionado y desarrollado por
-            <a
-              href="https://www.nimple.es"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm transition-all duration-200 hover:border-slate-300 hover:shadow-md hover:scale-105 cursor-pointer"
-            >
-              <img src="https://www.nimple.es/logo-imagen.png" alt="Nimple" className="h-5 w-auto" />
-            </a>
-          </div>
+            <span className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm transition-all duration-200 hover:scale-105">
+              <img src="https://www.nimple.es/logo-imagen.png" alt="Nimple" className="h-5 w-auto" draggable="false" />
+            </span>
+          </a>
         </div>
       </div>
     </footer>
